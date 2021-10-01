@@ -73,9 +73,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/benedikt/.local/share/nvim/site/pack/packer/start/dracula.nvim"
   },
+  ["editorconfig-vim"] = {
+    loaded = true,
+    path = "/home/benedikt/.local/share/nvim/site/pack/packer/start/editorconfig-vim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/benedikt/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+  },
+  neoformat = {
+    loaded = true,
+    path = "/home/benedikt/.local/share/nvim/site/pack/packer/start/neoformat"
   },
   ["nvim-autopairs"] = {
     loaded = true,

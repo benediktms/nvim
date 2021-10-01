@@ -13,19 +13,15 @@ end
 
 -- Map a key with optional options
 function M.map(mode, keys, action, options)
-  if options == nil then
-    options = {}
-  end
-  vim.api.nvim_set_keymap(mode, keys, action, options)
+    if options == nil then options = {} end
+    vim.api.nvim_set_keymap(mode, keys, action, options)
 end
 
 -- Buffer local mappings
 function M.map_buf(mode, keys, action, options, buf_nr)
-  if options == nil then
-    options = {}
-  end
-  local buf = buf_nr or 0
-  vim.api.nvim_buf_set_keymap(buf, mode, keys, action, options)
+    if options == nil then options = {} end
+    local buf = buf_nr or 0
+    vim.api.nvim_buf_set_keymap(buf, mode, keys, action, options)
 end
 
 -- We want to be able to access utils in all our configuration files
