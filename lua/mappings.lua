@@ -1,5 +1,6 @@
 local utils = require('utils')
 local map = utils.map
+local vim = vim
 
 -- map leader key
 map('n', '<Space>', '', {})
@@ -69,7 +70,7 @@ map("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
 map('i', '<cr>', 'compe#confirm("<cr>")', {expr = true})
 
-local options = {noremap = true, silent = true}
+-- local options = {noremap = true, silent = true}
 
 -- some additional code navigation keymaps are defined in the lsp
 -- map('n', 'gh', ':Lspsaga lsp_finder<cr>', options)

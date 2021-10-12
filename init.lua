@@ -40,7 +40,13 @@ require('plugins')
 -- configs to load after plugins
 require('lsp-config')
 
-vim.cmd('colo dracula')
+require'nvim-treesitter.configs'.setup {
+  context_commentstring = {
+    enable = true
+  }
+}
+
+vim.cmd('colo tokyonight')
 
 require('telescope').setup {
     defaults = {
@@ -78,7 +84,9 @@ require('telescope').setup {
     }
 }
 
-require('lualine').setup {options = {theme = 'dracula-nvim'}}
+require('lualine').setup {options = {theme = 'tokyonight'}}
+
+require'nvim-tree'.setup()
 
 utils.create_augroup({{'FileType', '*', 'setlocal', 'shiftwidth=2'}},
                      'Shiftwidth')
@@ -135,49 +143,45 @@ require('lspkind').init({
     --
     -- default: {}
     symbol_map = {
-      Text = '',
-      Method = 'ƒ',
-      Function = '',
-      Constructor = '',
-      Variable = '',
-      Class = '',
-      Interface = 'ﰮ',
-      Module = '',
-      Property = '',
-      Unit = '',
-      Value = '',
-      Enum = '了',
-      Keyword = '',
-      Snippet = '﬌',
-      Color = '',
-      File = '',
-      Folder = '',
-      EnumMember = '',
-      Constant = '',
-      Struct = ''
-    },
+        Text = '',
+        Method = 'ƒ',
+        Function = '',
+        Constructor = '',
+        Variable = '',
+        Class = '',
+        Interface = 'ﰮ',
+        Module = '',
+        Property = '',
+        Unit = '',
+        Value = '',
+        Enum = '了',
+        Keyword = '',
+        Snippet = '﬌',
+        Color = '',
+        File = '',
+        Folder = '',
+        EnumMember = '',
+        Constant = '',
+        Struct = ''
+    }
 })
 
 require'lspinstall'.setup() -- important
 
 local servers = require'lspinstall'.installed_servers()
-for _, server in pairs(servers) do
-  require'lspconfig'[server].setup{}
-end
+for _, server in pairs(servers) do require'lspconfig'[server].setup {} end
 
 local function setup_servers()
-  require'lspinstall'.setup()
-  local servers = require'lspinstall'.installed_servers()
-  for _, server in pairs(servers) do
-    require'lspconfig'[server].setup{}
-  end
+    require'lspinstall'.setup()
+    servers = require'lspinstall'.installed_servers()
+    for _, server in pairs(servers) do require'lspconfig'[server].setup {} end
 end
 setup_servers()
 
 -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
-require'lspinstall'.post_install_hook = function ()
-  setup_servers() -- reload installed servers
-  vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
+require'lspinstall'.post_install_hook = function()
+    setup_servers() -- reload installed servers
+    vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
 end
 
 require('gitsigns').setup()

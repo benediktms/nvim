@@ -69,6 +69,10 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Navigator.nvim"] = {
+    loaded = true,
+    path = "/home/benedikt/.local/share/nvim/site/pack/packer/start/Navigator.nvim"
+  },
   ["dracula.nvim"] = {
     loaded = true,
     path = "/home/benedikt/.local/share/nvim/site/pack/packer/start/dracula.nvim"
@@ -76,6 +80,14 @@ _G.packer_plugins = {
   ["editorconfig-vim"] = {
     loaded = true,
     path = "/home/benedikt/.local/share/nvim/site/pack/packer/start/editorconfig-vim"
+  },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/benedikt/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+  },
+  ["lspkind-nvim"] = {
+    loaded = true,
+    path = "/home/benedikt/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -96,6 +108,10 @@ _G.packer_plugins = {
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/benedikt/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+  },
+  ["nvim-lspinstall"] = {
+    loaded = true,
+    path = "/home/benedikt/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
   ["nvim-treesitter"] = {
     loaded = true,
