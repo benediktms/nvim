@@ -79,6 +79,14 @@ return {
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
 
+        ["<Leader>gj"] = {
+          "<cmd>lua require 'gitsigns'.nav_hunk('next', {navigation_message = false})<cr>",
+          desc = "Goto next hunk",
+        },
+        ["<Leader>gk"] = {
+          "<cmd>lua require 'gitsigns'.nav_hunk('prev', {navigation_message = false})<cr>",
+          desc = "Goto next hunk",
+        },
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
       },
